@@ -29,7 +29,7 @@ public class NoteServices {
 
     public Note getNote(long noteId)  {
 
-        return noteDb.getReferenceById(noteId);
+        return noteDb.findById(noteId).get();
     }
 
 
