@@ -18,20 +18,20 @@ public class NoteController {
         noteServices.putNote(note);
     }
     @GetMapping("/allnotes")
-    public List<Note> getNotes() throws Exception {
+    public List<Note> getNotes()  {
         return noteServices.getNotes();
     }
     @GetMapping("/allnotes/{noteId}")
-    public Note getOneNote(@PathVariable String noteId) throws Exception {
+    public Note getOneNote(@PathVariable String noteId)  {
         return noteServices.getNote(Long.parseLong(noteId));
     }
-    @PostMapping("/del")
-    public void delNote(@RequestBody Note note) throws Exception {
-         noteServices.deleteNote(note.getId());
+    @PostMapping("/allnotes/{noteId}")
+    public void delNote(@PathVariable String noteId)  {
+         noteServices.deleteNote(Long.parseLong(noteId));
     }
     @PutMapping("/allnotes")
-    public void editNote(@RequestBody Note note) throws Exception {
-        noteServices.editNote( note.getId(),note.getNamenote(), note.getDescrnote());
+    public void editNote(@RequestBody Note note)  {
+        noteServices.editNote(note);
     }
 
 }

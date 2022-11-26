@@ -2,10 +2,14 @@ package com.example.noteapp.entities;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Data
+@Entity
 public class Note {
+    @Id
     private Long id;
     private String namenote;
     private String descrnote;
@@ -14,6 +18,10 @@ public class Note {
         this.id = id;
         this.namenote = namenote;
         this.descrnote = descrnote;
+    }
+
+    public Note() {
+
     }
 
 
